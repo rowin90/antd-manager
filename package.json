@@ -30,6 +30,7 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
+    "jsonp": "^0.2.1",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "object-assign": "4.1.1",
@@ -92,9 +93,16 @@
   "babel": {
     "presets": [
       "react-app"
-    ], 
+    ],
     "plugins": [
-      ["import", { "libraryName": "antd", "libraryDirectory": "es", "style":true }] 
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "libraryDirectory": "es",
+          "style": true
+        }
+      ]
     ]
   },
   "eslintConfig": {
