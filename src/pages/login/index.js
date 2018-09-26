@@ -1,11 +1,11 @@
 import React from 'react'
 import './index.less'
-export default class Home extends React.Component{
+export default class Login extends React.Component{
 
     render(){
         return (
             <div className="home-wrap">
-                欢迎学习后台管理系统课程
+                this is a login pages
             </div>
         );
     }
