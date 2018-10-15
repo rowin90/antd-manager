@@ -26,6 +26,22 @@ class FilterForm extends React.Component{
                 let initialValue = item.initialValue || '';
                 let placeholder = item.placeholder;
                 let width = item.width;
+                if (item.type == '城市'){
+                    const SELECT = <FormItem label="城市" key={Math.random()}>
+                    {
+                        getFieldDecorator('city', {
+                            initialValue: '0'
+                        })(
+                            <Select
+                                style={{ width: 80 }}
+                            >
+                                {Utils.getOptionList([{'id': '0', 'name': '全部'}, {'id': '1', name: '北京'}, {'id:': '2', name: '上海'}, {'id': '3', name: '杭州'}])}
+                            </Select>
+                        )
+                    }
+                </FormItem>;
+                formItemList.push(SELECT)
+                }
                 if (item.type == '时间查询'){
                     const begin_time = <FormItem label="订单时间" key={field}>
                         {
