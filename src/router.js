@@ -18,6 +18,8 @@ import City from './pages/city'
 import Order from './pages/order'
 import OrderDetail from './pages/order/detail'
 import BikeMap from './pages/map/bikeMap'
+import Bar from './pages/echarts/bar'
+import Pie from './pages/echarts/pie'
 import Admin from './admin'
 import Common from './common'
 import App from './App'
@@ -46,6 +48,8 @@ export default class IRouter extends React.Component{
                                 <Route path="/admin/city" component={City} />
                                 <Route path="/admin/order" component={Order} />
                                 <Route path="/admin/bikeMap" component={BikeMap} />
+                                <Route path="/admin/charts/bar" component={Bar} />
+                                <Route path="/admin/charts/pie" component={Pie} />
                                 <Route component={NoMatch}/>
                             </Switch>
                         </Admin>
