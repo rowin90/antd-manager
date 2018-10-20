@@ -3,7 +3,7 @@ import {Card, Button, Modal} from 'antd'
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftjs from 'draftjs-to-html';
-export default class Line extends React.Component {
+export default class Rich extends React.Component {
 
     state ={
         showRichText:false,
