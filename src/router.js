@@ -20,6 +20,7 @@ import OrderDetail from './pages/order/detail'
 import BikeMap from './pages/map/bikeMap'
 import Bar from './pages/echarts/bar'
 import Pie from './pages/echarts/pie'
+import Line from './pages/echarts/line'
 import Admin from './admin'
 import Common from './common'
 import App from './App'
@@ -50,6 +51,7 @@ export default class IRouter extends React.Component{
                                 <Route path="/admin/bikeMap" component={BikeMap} />
                                 <Route path="/admin/charts/bar" component={Bar} />
                                 <Route path="/admin/charts/pie" component={Pie} />
+                                <Route path="/admin/charts/line" component={Line} />
                                 <Route component={NoMatch}/>
                             </Switch>
                         </Admin>
