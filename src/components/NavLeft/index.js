@@ -27,7 +27,7 @@ export default class NavLeft extends React.Component{
                      <NavLink to={`${item.key}`}>{item.title}</NavLink>
                    </Menu.Item>
         })
-    }
+    } 
     render(){
         return (
             <div>
