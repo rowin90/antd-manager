@@ -3,6 +3,8 @@ import { Row,Col } from "antd"
 import './index.less'
 import Util from '../../utils/utils'
 import axios from '../../axios'
+import { connect } from 'react-redux'
+
 class Header extends React.Component{
     
     componentWillMount(){
@@ -70,5 +72,9 @@ class Header extends React.Component{
         );
     }
 }
-
-export default Header
+const mapStateToProps = state => {
+    return {
+        menuName: state.menuName
+    }
+};
+export default connect(mapStateToProps)(Header)

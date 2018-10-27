@@ -3,15 +3,24 @@ import { Menu, Icon } from 'antd'
 import MenuConfig from './../../config/menuConfig'
 import './index.less'
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux'
+import { switchMenu } from './../../redux/action'
+
 const SubMenu = Menu.SubMenu;
 
-export default class NavLeft extends React.Component{
+class NavLeft extends React.Component{
+    
     componentWillMount(){
         const menuTreeNode = this.renderMenu(MenuConfig);
 
         this.setState({
             menuTreeNode
         })
+    }
+
+    handleClick = ({item})=>{
+        const { dispatch } = this.props;
+        dispatch(switchMenu(item.props.title))
     }
     // 菜单渲染
     renderMenu =(data)=>{
@@ -37,6 +46,7 @@ export default class NavLeft extends React.Component{
                 </div>
                 <Menu 
                     theme="dark"
+                    onClick={this.handleClick}
                 >
                     { this.state.menuTreeNode }
                 </Menu>
@@ -44,3 +54,5 @@ export default class NavLeft extends React.Component{
         )
     }
 }
+
+export default connect()(NavLeft)
