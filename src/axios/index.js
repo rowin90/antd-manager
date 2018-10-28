@@ -46,7 +46,13 @@ export default class Axios {
     }
 
     static ajax(options){
-        let baseURL = "https://www.easy-mock.com/mock/5bbcc3305c48786433cbf822/mockapi";
+        let baseURL = "";
+        if(options.isMock){
+            baseURL = "https://www.easy-mock.com/mock/5bbcc3305c48786433cbf822/mockapi";
+        }else{
+            // 后端真实地址
+            baseURL = "https://www.easy-mock.com/mock/5bbcc3305c48786433cbf822/mockapi";
+        }
         let loading;
         if (options.data && options.data.isShowLoading !== false){
             loading = document.getElementById('ajaxLoading');

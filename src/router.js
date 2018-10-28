@@ -18,6 +18,7 @@ import HighTable from './pages/table/highTable'
 import City from './pages/city'
 import Order from './pages/order'
 import OrderDetail from './pages/order/detail'
+import User from './pages/user/index'
 import BikeMap from './pages/map/bikeMap'
 import Bar from './pages/echarts/bar'
 import Pie from './pages/echarts/pie'
@@ -58,6 +59,7 @@ export default class IRouter extends React.Component{
                                     <Route path="/table/high" component={HighTable} />
                                     <Route path="/city" component={City} />
                                     <Route path="/order" component={Order} />
+                                    <Route path="/user" component={User} />
                                     <Route path="/bikeMap" component={BikeMap} />
                                     <Route path="/charts/bar" component={Bar} />
                                     <Route path="/charts/pie" component={Pie} />
