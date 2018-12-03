@@ -1,0 +1,27 @@
+{
+    "apps":[
+        {
+            "name":"manager-antd",
+            "script":"app.js",
+            "env":{
+                "COMMON_VARIABLE":"true"
+            },
+            "env_production":{
+                "NODE_ENV":"production"
+            }
+        }
+    ],
+    "deploy":{
+        "production":{
+            "user":"rj_manager",
+            "host":["39.98.80.156"],
+            "ref":"origin/master",
+            "repo":"git@github.com:Jerome1580/antd-manager.git",
+            "path":"/home/rj_manager/www/antd/production",
+            "ssh_options":"StrictHostKeyChecking=no",
+            "env":{
+                "NODE_ENV":"production"
+            }
+        }
+    }
+}
