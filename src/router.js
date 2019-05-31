@@ -18,7 +18,7 @@ import HighTable from './pages/table/highTable';
 import City from './pages/city';
 import Order from './pages/order';
 import OrderDetail from './pages/order/detail';
-import User from './pages/user/index';
+import Users from './pages/users/index';
 import BikeMap from './pages/map/bikeMap';
 import Bar from './pages/echarts/bar';
 import Pie from './pages/echarts/pie';
@@ -31,6 +31,10 @@ import App from './App';
 
 import DrugList from './pages/drug/list';
 import DrugDetail from './pages/drug/detail';
+
+import UserList from './pages/user/list';
+import UserDetail from './pages/user/detail';
+import UserEdit from './pages/user/edit';
 
 export default class IRouter extends React.Component {
   render() {
@@ -58,6 +62,10 @@ export default class IRouter extends React.Component {
                     <Route path='/home' component={Home} />
                     <Route path='/drug/list' component={DrugList} />
                     <Route path='/drug/detail' component={DrugDetail} />
+                    <Route path='/user/list' component={UserList} />
+                    <Route path='/user/detail' component={UserDetail} />
+                    <Route path='/user/edit' component={UserEdit} />
+
                     <Route path='/ui/buttons' component={Buttons} />
                     <Route path='/ui/modals' component={Modals} />
                     <Route path='/ui/loadings' component={Loadings} />
@@ -72,7 +80,7 @@ export default class IRouter extends React.Component {
                     <Route path='/table/high' component={HighTable} />
                     <Route path='/city' component={City} />
                     <Route path='/order' component={Order} />
-                    <Route path='/user' component={User} />
+                    <Route path='/users' component={Users} />
                     <Route path='/bikeMap' component={BikeMap} />
                     <Route path='/charts/bar' component={Bar} />
                     <Route path='/charts/pie' component={Pie} />

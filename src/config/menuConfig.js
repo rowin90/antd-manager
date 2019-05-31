@@ -8,6 +8,20 @@ const menuList = [
     key: '/drug/list'
   },
   {
+    title: '用户管理',
+    key: '/user',
+    children: [
+      {
+        title: '用户库',
+        key: '/user/list'
+      },
+      {
+        title: '用户分析',
+        key: '/user/analyze'
+      }
+    ]
+  },
+  {
     title: 'UI',
     key: '/ui',
     children: [
@@ -97,7 +111,7 @@ const menuList = [
   },
   {
     title: '员工管理',
-    key: '/user'
+    key: '/users'
   },
   {
     title: '车辆地图',

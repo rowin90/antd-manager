@@ -125,5 +125,16 @@ export default {
       args[argname] = value;
     }
     return args[key];
+  },
+
+  Form: {
+    // 转化成不带毫秒的时间戳
+    normTimeToStrNoMS(moment) {
+      if (moment) {
+        let m = moment.format('x');
+        return m.slice(0, -3);
+      }
+      return undefined;
+    }
   }
 };

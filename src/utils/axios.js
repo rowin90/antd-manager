@@ -110,11 +110,6 @@ export default class Axios {
   }
 
   axios(method, url, params = {}) {
-    let loading;
-    // if (options.data && options.data.isShowLoading !== false) {
-    //   loading = document.getElementById('ajaxLoading');
-    //   loading.style.display = 'block';
-    // }
     let baseURL = Axios.getBaseUrl();
     return new Promise((resolve, reject) => {
       let _option = params;
@@ -126,10 +121,6 @@ export default class Axios {
         ...params
       };
       axios.request(_option).then(response => {
-        // if (_option.data && _option.data.isShowLoading !== false) {
-        //   loading = document.getElementById('ajaxLoading');
-        //   loading.style.display = 'none';
-        // }
         if (response.status === 200) {
           let res = response.data;
           if (res.code == 200) {
