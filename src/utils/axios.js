@@ -18,7 +18,7 @@ axios.interceptors.response.use(function(config) {
 
 export default class Axios {
   static getBaseUrl() {
-    return 'http://192.168.1.129:8085';
+    return 'http://192.168.1.128:8085';
   }
 
   static requestList(_this, url, params, isMock) {

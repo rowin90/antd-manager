@@ -16,7 +16,7 @@ const menuList = [
         key: '/user/list'
       },
       {
-        title: '用户分析',
+        title: '用户画像',
         key: '/user/analyze'
       }
     ]

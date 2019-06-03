@@ -35,6 +35,7 @@ import DrugDetail from './pages/drug/detail';
 import UserList from './pages/user/list';
 import UserDetail from './pages/user/detail';
 import UserEdit from './pages/user/edit';
+import UserAnalyze from './pages/user/analyze';
 
 export default class IRouter extends React.Component {
   render() {
@@ -65,6 +66,7 @@ export default class IRouter extends React.Component {
                     <Route path='/user/list' component={UserList} />
                     <Route path='/user/detail' component={UserDetail} />
                     <Route path='/user/edit' component={UserEdit} />
+                    <Route path='/user/analyze' component={UserAnalyze} />
 
                     <Route path='/ui/buttons' component={Buttons} />
                     <Route path='/ui/modals' component={Modals} />

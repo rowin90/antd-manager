@@ -114,4 +114,4 @@ class UserDetail extends React.Component {
   }
 }
 
-export default Form.create({ name: 'validate_other' })(UserDetail);
+export default Form.create({ name: 'user_detail' })(UserDetail);

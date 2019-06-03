@@ -43,6 +43,26 @@ class User_API extends Axios {
   detail({ user_id }) {
     return this.axios('get', `/api/user/info?user_id=${user_id}`);
   }
+
+  /**
+   * 用户详情
+   * @param {String} user_id
+   */
+  detail({ user_id }) {
+    return this.axios('get', `/api/user/info?user_id=${user_id}`);
+  }
+
+  /**
+   * 用户画像
+   * @param {String} start_date // 开始时间
+   * @param {String} end_date  // 结束时间
+   */
+  analyze({ start_date, end_date }) {
+    return this.axios(
+      'get',
+      `/api/user/user_portrait?start_date=${start_date}&end_date=${end_date}`
+    );
+  }
 }
 
 export default new User_API();

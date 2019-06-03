@@ -28,10 +28,10 @@ class UserDetail extends React.Component {
   type = Utils.url_request('type') || '';
   user_id = Utils.url_request('user_id') || '';
 
-  async componentDidMount() {
+  componentDidMount() {
     if (this.type === 'edit' || this.type === 'open') {
       // 编辑 \ 详情 页面
-      await this._renderUserInfo(this.user_id);
+      this._renderUserInfo(this.user_id);
     }
   }
   handleSubmit = e => {
@@ -74,7 +74,7 @@ class UserDetail extends React.Component {
       ? moment(data.register_time * 1000)
       : undefined;
 
-    await this.props.form.setFieldsValue(data);
+    this.props.form.setFieldsValue(data);
   }
 
   render() {

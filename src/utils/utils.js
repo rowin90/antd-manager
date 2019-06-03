@@ -130,11 +130,28 @@ export default {
   Form: {
     // 转化成不带毫秒的时间戳
     normTimeToStrNoMS(moment) {
-      if (moment) {
+      if (!moment) {
+        return undefined;
+      }
+
+      if (typeof moment === 'object') {
+        // moment 格式
         let m = moment.format('x');
         return m.slice(0, -3);
       }
-      return undefined;
+      if (typeof moment === 'string' || typeof moment === 'number') {
+        // moment 格式
+        return moment.toString().slice(0, -3);
+      }
+    }
+  },
+  Echart: {
+    normData(data) {
+      let dataArr = [];
+      for (let [key, value] of Object.entries(data)) {
+        dataArr.push({ value, name: key });
+      }
+      return dataArr;
     }
   }
 };
