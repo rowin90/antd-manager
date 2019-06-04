@@ -78,7 +78,7 @@ class Header extends React.Component {
 }
 const mapStateToProps = state => {
   return {
-    menuName: state.menuName
+    menuName: state.home.menuName
   };
 };
 export default connect(mapStateToProps)(Header);

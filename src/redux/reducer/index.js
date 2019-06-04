@@ -1,22 +1,19 @@
-// reducer 数据处理和包装
-import { type } from './../action'
+import { combineReducers } from 'redux';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
+import base from './base';
+import home from './home';
 
-const initialState ={
-    menuName:'首页'
-}
+const rootReducer = combineReducers({
+  base,
+  home
+});
 
-export default (state = initialState,action)=>{
-    
-    switch(action.type){
-        case type.SWITCH_MENU:
-            return {
-                ...state,
-                menuName:action.menuName
-            }
-            break;
-        default:
-            return state
-            break;
-    }
-}
+const config = {
+  key: 'dashboard',
+  storage: storage,
+  whitelist: ['base'] //持久化
+};
+
+export default persistReducer(config, rootReducer);

@@ -31,9 +31,9 @@ class UserAnalyze extends React.Component {
   }
 
   params = {
-    // start_date: Utils.Form.normTimeToStrNoMS(transformTimeScale('7')),
+    // start_date: Utils.Time.normTimeToStrNoMS(transformTimeScale('7')),
     start_date: '0',
-    end_date: Utils.Form.normTimeToStrNoMS(Date.now())
+    end_date: Utils.Time.normTimeToStrNoMS(Date.now())
   };
 
   async requestList() {
@@ -87,7 +87,7 @@ class FilterForm extends React.Component {
   // 自定义选择日期
   onChange = (value, dateString) => {
     let [start_date, end_date] = value.map(time =>
-      Utils.Form.normTimeToStrNoMS(time)
+      Utils.Time.normTimeToStrNoMS(time)
     );
     this.submitDate(start_date, end_date);
   };
@@ -96,8 +96,8 @@ class FilterForm extends React.Component {
   quickDate = e => {
     let start_date = transformTimeScale(Number(e.target.value));
     let end_date = Date.now();
-    start_date = Utils.Form.normTimeToStrNoMS(start_date);
-    end_date = Utils.Form.normTimeToStrNoMS(end_date);
+    start_date = Utils.Time.normTimeToStrNoMS(start_date);
+    end_date = Utils.Time.normTimeToStrNoMS(end_date);
 
     // 清除自定义日期
     Array.from(

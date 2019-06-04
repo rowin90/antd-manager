@@ -61,7 +61,7 @@ class UserDetail extends React.Component {
 
   // 过滤提交数据
   _filterAjaxData(values) {
-    values.birthday = Utils.Form.normTimeToStrNoMS(values.birthday) || '0';
+    values.birthday = Utils.Time.normTimeToStrNoMS(values.birthday) || '0';
     return values;
   }
 

@@ -127,7 +127,7 @@ export default {
     return args[key];
   },
 
-  Form: {
+  Time: {
     // 转化成不带毫秒的时间戳
     normTimeToStrNoMS(moment) {
       if (!moment) {

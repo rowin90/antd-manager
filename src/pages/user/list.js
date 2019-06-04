@@ -163,7 +163,7 @@ export default class UserList extends React.Component {
           <Button
             type='primary'
             onClick={() => {
-              history.push('/user/detail?type=add');
+              this.props.history.push('/user/detail?type=add');
             }}
           >
             新增用户
@@ -196,9 +196,9 @@ class FilterForm extends React.Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         // 处理数据
-        let begin_time = Utils.Form.normTimeToStrNoMS(values.begin_time) || '0';
+        let begin_time = Utils.Time.normTimeToStrNoMS(values.begin_time) || '0';
         let end_time =
-          Utils.Form.normTimeToStrNoMS(values.end_time) ||
+          Utils.Time.normTimeToStrNoMS(values.end_time) ||
           parseInt(Date.now() / 1000).toString();
 
         values.reg_time = begin_time + ',' + end_time;

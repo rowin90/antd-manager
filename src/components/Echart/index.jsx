@@ -1,13 +1,13 @@
 import React from 'react';
 import echartTheme from './echartTheme';
 import echarts from 'echarts';
-
 import ReactEcharts from 'echarts-for-react';
 
 export default props => {
   if (!props.option) {
     return '暂无数据';
   }
+
   // 注入主题
   echarts.registerTheme('kc', echartTheme);
 

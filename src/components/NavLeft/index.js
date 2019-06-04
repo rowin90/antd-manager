@@ -1,10 +1,10 @@
 import React from 'react';
 import { Menu, Icon } from 'antd';
-import MenuConfig from './../../config/menuConfig';
+import MenuConfig from '../../config/menuConfig';
 import './index.less';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { switchMenu } from './../../redux/action';
+import { switchMenu } from '@/redux/action/home.js';
 
 const SubMenu = Menu.SubMenu;
 

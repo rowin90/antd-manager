@@ -3,7 +3,7 @@ import {Card, Button, Modal, Form, Select, Input, Tree, Transfer} from 'antd'
 import ETable from './../../components/ETable'
 import Utils from './../../utils/utils'
 import axios from './../../axios'
-import menuConfig from './../../config/menuConfig'
+import menuConfig from '../../config/menuConfig'
 
 const Option = Select.Option;
 const FormItem = Form.Item
