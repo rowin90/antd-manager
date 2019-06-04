@@ -1,35 +1,18 @@
 import React from 'react';
 import Utils from '@/utils/utils';
-import {
-  Card,
-  Button,
-  Table,
-  Form,
-  Select,
-  Modal,
-  message,
-  Input,
-  DatePicker,
-  Radio,
-  Row,
-  Col
-} from 'antd';
-import moment from 'moment';
+import { Card, Form, DatePicker, Radio, Row, Col } from 'antd';
 import User_API from '@/api/user';
+import Echart from 'components/Echart';
 
-import EchartGender from './components/echart-gender';
-import EchartAge from './components/echart-age';
-import EchartEducation from './components/echart-education';
-import EchartProfession from './components/echart-profession';
+import {
+  sexOption,
+  ageOption,
+  educationOption,
+  professionOption
+} from './components/options';
 
 const FormItem = Form.Item;
-const Option = Select.Option;
-const confirm = Modal.confirm;
-
-const dateFormat = 'YYYY/MM/DD';
-const monthFormat = 'YYYY/MM';
-
-const { MonthPicker, RangePicker } = DatePicker;
+const { RangePicker } = DatePicker;
 
 // 转化距离今天的时间戳
 function transformTimeScale(scale) {
@@ -55,7 +38,6 @@ class UserAnalyze extends React.Component {
 
   async requestList() {
     let result = await User_API.analyze(this.params);
-    console.log(result);
     let { age, grade, profession, sex } = result.data;
     this.setState({ age, grade, profession, sex });
   }
@@ -78,20 +60,20 @@ class UserAnalyze extends React.Component {
           <div style={{ marginTop: '40px' }}>
             <Row>
               <Col span={12}>
-                <EchartGender data={sex} />
+                <Echart option={sexOption(sex)} />
               </Col>
               <Col span={12}>
-                <EchartProfession data={profession} />
+                <Echart option={professionOption(profession)} />
               </Col>
             </Row>
           </div>
           <div style={{ marginTop: '40px' }}>
             <Row>
               <Col span={12}>
-                <EchartAge data={age} />
+                <Echart option={ageOption(age)} />
               </Col>
               <Col span={12}>
-                <EchartEducation data={grade} />
+                <Echart option={educationOption(grade)} />
               </Col>
             </Row>
           </div>
@@ -118,7 +100,6 @@ class FilterForm extends React.Component {
     end_date = Utils.Form.normTimeToStrNoMS(end_date);
 
     // 清除自定义日期
-    // document.querySelectorAll('.ant-calendar-range-picker-input').value = '';
     Array.from(
       document.querySelectorAll('.ant-calendar-range-picker-input')
     ).forEach(item => (item.value = ''));
