@@ -1,5 +1,12 @@
 import React from 'react';
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import {
+  HashRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom';
+import history from '@/utils/history';
+
 import Home from './pages/home';
 import Login from './pages/login';
 import Buttons from './pages/ui/buttons';
@@ -38,9 +45,18 @@ import UserEdit from './pages/user/edit';
 import UserAnalyze from './pages/user/analyze';
 
 export default class IRouter extends React.Component {
+  componentDidMount() {
+    let _this = this;
+    window.onhashchange = function name(params) {
+      _this.forceUpdate();
+    };
+  }
+  componentWillUnmount() {
+    window.onhashchange = null;
+  }
   render() {
     return (
-      <HashRouter>
+      <Router>
         <App>
           <Switch>
             <Route path='/login' component={Login} />
@@ -61,8 +77,8 @@ export default class IRouter extends React.Component {
                 <Admin>
                   <Switch>
                     <Route path='/home' component={Home} />
-                    <Route path='/drug/list' component={DrugList} />
-                    <Route path='/drug/detail' component={DrugDetail} />
+                    <Route path='/drug/list' exact component={DrugList} />
+                    <Route path='/drug/detail' exact component={DrugDetail} />
                     <Route path='/user/list' component={UserList} />
                     <Route path='/user/detail' component={UserDetail} />
                     <Route path='/user/edit' component={UserEdit} />
@@ -97,7 +113,7 @@ export default class IRouter extends React.Component {
             />
           </Switch>
         </App>
-      </HashRouter>
+      </Router>
     );
   }
 }

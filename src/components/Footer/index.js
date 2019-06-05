@@ -4,7 +4,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <div className='footer'>
-        版权所有：（康策中台项目，有疑问请钉钉@胡锦标，标哥
+        版权所有：（康策中台项目，有疑问请钉钉@胡锦标
         jingbiao.hu@kangcenet.com）
       </div>
     );
