@@ -209,7 +209,7 @@ class FilterForm extends React.Component {
         <FormItem label='关键字'>
           {getFieldDecorator('key', {
             rules: [{ required: true, message: '请输入关键字!' }]
-          })(<Input type='text' />)}
+          })(<Input type='text' placeholder='随便输入' />)}
         </FormItem>
 
         <FormItem>

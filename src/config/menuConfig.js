@@ -20,8 +20,8 @@ const menuList = [
         key: '/user/analyze'
       }
     ]
-  }
-  /* {
+  },
+  {
     title: 'UI',
     key: '/ui',
     children: [
@@ -138,6 +138,6 @@ const menuList = [
   {
     title: '权限设置',
     key: '/permission'
-  } */
+  }
 ];
 export default menuList;

@@ -1,4 +1,4 @@
-import Axios from '@/utils/axios';
+import Axios from '@/axios';
 
 class Home_API extends Axios {
   /**

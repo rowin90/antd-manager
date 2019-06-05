@@ -1,4 +1,4 @@
-import Axios from '@/utils/axios';
+import Axios from '@/axios';
 
 class User_API extends Axios {
   // 登录

@@ -43,7 +43,7 @@ class NavLeft extends React.Component {
       <div>
         <div className='logo'>
           <img src='/assets/logo-ant.svg' alt='' />
-          <h1>康策中台</h1>
+          <h1>管理后台</h1>
         </div>
         <Menu theme='dark' onClick={this.handleClick}>
           {this.state.menuTreeNode}

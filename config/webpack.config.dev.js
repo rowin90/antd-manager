@@ -1,14 +1,14 @@
 'use strict';
 
-const autoprefixer = require('autoprefixer');
+const autoprefixer = require('./node_modules/autoprefixer');
 const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
-const eslintFormatter = require('react-dev-utils/eslintFormatter');
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
+const webpack = require('./node_modules/webpack');
+const HtmlWebpackPlugin = require('./node_modules/html-webpack-plugin');
+const CaseSensitivePathsPlugin = require('./node_modules/case-sensitive-paths-webpack-plugin');
+const InterpolateHtmlPlugin = require('./node_modules/react-dev-utils/InterpolateHtmlPlugin');
+const WatchMissingNodeModulesPlugin = require('./node_modules/react-dev-utils/WatchMissingNodeModulesPlugin');
+const eslintFormatter = require('./node_modules/react-dev-utils/eslintFormatter');
+const ModuleScopePlugin = require('./node_modules/react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 function resolve_alias(dir) {
@@ -176,7 +176,7 @@ module.exports = {
                   // https://github.com/facebookincubator/create-react-app/issues/2677
                   ident: 'postcss',
                   plugins: () => [
-                    require('postcss-flexbugs-fixes'),
+                    require('./node_modules/postcss-flexbugs-fixes'),
                     autoprefixer({
                       browsers: [
                         '>1%',

@@ -22,7 +22,7 @@ var dotenvFiles = [
   // since normally you expect tests to produce the same
   // results for everyone
   NODE_ENV !== 'test' && `${paths.dotenv}.local`,
-  paths.dotenv,
+  paths.dotenv
 ].filter(Boolean);
 
 // Load environment variables from .env* files. Suppress warnings using silent
@@ -32,9 +32,9 @@ var dotenvFiles = [
 // https://github.com/motdotla/dotenv-expand
 dotenvFiles.forEach(dotenvFile => {
   if (fs.existsSync(dotenvFile)) {
-    require('dotenv-expand')(
-      require('dotenv').config({
-        path: dotenvFile,
+    require('./node_modules/dotenv-expand')(
+      require('./node_modules/dotenv').config({
+        path: dotenvFile
       })
     );
   }
@@ -76,7 +76,7 @@ function getClientEnvironment(publicUrl) {
         // For example, <img src={process.env.PUBLIC_URL + '/img/logo.png'} />.
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
-        PUBLIC_URL: publicUrl,
+        PUBLIC_URL: publicUrl
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin
@@ -84,7 +84,7 @@ function getClientEnvironment(publicUrl) {
     'process.env': Object.keys(raw).reduce((env, key) => {
       env[key] = JSON.stringify(raw[key]);
       return env;
-    }, {}),
+    }, {})
   };
 
   return { raw, stringified };
