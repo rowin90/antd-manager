@@ -139,7 +139,6 @@ export default class DrugList extends React.Component {
                       _this.delDrug(record.ID);
                     }
                   });
-                  console.log(record);
                 }}
                 style={{ marginRight: 8 }}
               >

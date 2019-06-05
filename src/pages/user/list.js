@@ -31,8 +31,6 @@ export default class UserList extends React.Component {
   }
 
   handleSearch = values => {
-    console.log(values);
-
     this.params = {
       ...this.params,
       ...values

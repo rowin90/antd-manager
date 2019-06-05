@@ -51,8 +51,6 @@ class UserDetail extends React.Component {
 
   // 过滤提交数据
   _filterAjaxData(values) {
-    console.log(values);
-
     values.type = Number(values.type);
 
     return values;

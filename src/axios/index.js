@@ -125,7 +125,6 @@ export default class Axios {
       axios.request(_option).then(response => {
         if (response.status === 200) {
           let res = response.data;
-          console.log(res);
           if (res.code == 200) {
             resolve(res);
           } else {
